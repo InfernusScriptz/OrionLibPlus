@@ -647,6 +647,7 @@ function OrionLib:MakeWindow(WindowConfig)
 	MakeDraggable(DragPoint, MainWindow)
 
 	AddConnection(CloseBtn.MouseButton1Up, function()
+		WindowConfig.CloseCallback()
 		Orion:Destroy()
 	end)
 
