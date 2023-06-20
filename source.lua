@@ -470,14 +470,14 @@ function OrionLib:MakeWindow(WindowConfig)
 	local UIHidden = false
 
 	WindowConfig = WindowConfig or {}
-	WindowConfig.Name = WindowConfig.Name or "Mercury's FE Script Hub"
+	WindowConfig.Name = WindowConfig.Name or "OrionLib+"
 	WindowConfig.ConfigFolder = WindowConfig.ConfigFolder or WindowConfig.Name
 	WindowConfig.SaveConfig = WindowConfig.SaveConfig or false
 	WindowConfig.HidePremium = WindowConfig.HidePremium or false
 	if WindowConfig.IntroEnabled == nil then
 		WindowConfig.IntroEnabled = true
 	end
-	WindowConfig.IntroText = WindowConfig.IntroText or "Mercury's FE Script Hub"
+	WindowConfig.IntroText = WindowConfig.IntroText or "OrionLib+"
 	WindowConfig.CloseCallback = WindowConfig.CloseCallback or function() end
 	WindowConfig.ShowIcon = WindowConfig.ShowIcon or false
 	WindowConfig.Icon = WindowConfig.Icon or "rbxassetid://8834748103"
@@ -1753,10 +1753,6 @@ end
 
 function OrionLib:Destroy()
 	Orion:Destroy()
-end
-function OrionLib:OnClose(func)
-	repeat task.wait(0) until not Orion
-	func()
 end
 
 return OrionLib
